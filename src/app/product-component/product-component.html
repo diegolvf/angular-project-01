@@ -1,8 +1,13 @@
 <div class="container">
   <div class="display-4 text-center mt-3">Cadastro de Produtos</div> <!-- display-4 é uma classe de título do bootstrap-->
+
   <form [formGroup]="formGroupProduct">
     <div class="mb-3 mt-3"> <!--mb-3-->
-      <label for="inputName" class="form-label">Nome</label>
+      <label for="inputid" class="form-label">Id</label>
+      <input type="text" formControlName="id" class="form-control" id="inputid">
+    </div>
+    <div class="mb-3 mt-3"> <!--mb-3-->
+      <label for="inputName" class="form-label">Name</label>
       <input type="text" formControlName="name" class="form-control" id="inputName">
     </div>
     <div class="mb-3">
@@ -13,6 +18,25 @@
       <label for="inputDescription" class="form-label">Description</label>
       <input type="text" formControlName="description" class="form-control" id="inputDescription">
     </div>
-  </form>
     <button type="submit" class="btn btn-primary" (click) = "save()">Salvar</button>
+  </form>
+    <br class="mt-3 mb-3">Total de produtos: {{products.length}}
+    <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products">
+        <th scope="row">{{p.id}}</th>
+        <td>{{p.name}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.description}}</td>
+        </tr>
+    </tbody>
+    </table>
 </div>

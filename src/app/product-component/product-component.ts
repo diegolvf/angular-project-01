@@ -21,6 +21,7 @@ export class ProductComponent {
     });
   }
   save() {
-    alert(this.formGroupProduct.value);
+    this.products.push(this.formGroupProduct.value);
+    this.formGroupProduct.reset();
   }
 }
