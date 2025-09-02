@@ -1,18 +1,18 @@
 <div class="container">
   <div class="display-4 text-center mt-3">Cadastro de Produtos</div> <!-- display-4 é uma classe de título do bootstrap-->
-  <form>
+  <form [formGroup]="formGroupProduct">
     <div class="mb-3 mt-3"> <!--mb-3-->
       <label for="inputName" class="form-label">Nome</label>
-      <input type="text" class="form-control" id="inputName">
+      <input type="text" formControlName="name" class="form-control" id="inputName">
     </div>
     <div class="mb-3">
       <label for="inputPrice" class="form-label">Price</label>
-      <input type="text" class="form-control" id="inputPrice">
+      <input type="text" formControlName="price" class="form-control" id="inputPrice">
     </div>
     <div class="mb-3">
       <label for="inputDescription" class="form-label">Description</label>
-      <input type="text" class="form-control" id="inputDescription">
+      <input type="text" formControlName="description" class="form-control" id="inputDescription">
     </div>
   </form>
-    <button type="submit" class="btn btn-primary">Salvar</button>
+    <button type="submit" class="btn btn-primary" (click) = "save()">Salvar</button>
 </div>
